@@ -13,4 +13,4 @@ const options = {
 };
 
 export default (req: NextApiRequest, res: NextApiResponse): Promise<void> =>
-  NextAuth(req, res, options);
+  NextAuth(req, res, options)
