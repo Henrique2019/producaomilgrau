@@ -12,5 +12,5 @@ const options = {
   ],
 };
 
-export default (req: NextApiRequest, res: NextApiResponse): Promise<void> =>
+export default (req: NextApiRequest, res: NextApiResponse): Promise<any> =>
   NextAuth(req, res, options)
