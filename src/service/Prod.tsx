@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 const Prod =  axios.create({
-  baseURL: `'https://medralapi.glitch.me/'`
+  baseURL: "https://medralapi.glitch.me"
   
 });
 
