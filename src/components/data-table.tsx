@@ -22,7 +22,7 @@ class DataTable extends Component<any, any> {
                 <td></td>
                 <td></td>
                 <td className="grid justify-items-center bg-gray-500">
-                {this.props.obj.createdAt}
+                {this.props.obj.Finalizada}
                 </td>
             </tr>
         );

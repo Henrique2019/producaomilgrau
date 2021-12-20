@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Prod from '../service/Prod';
 import DataTable from '../components/data-table';
 
-
-
-
 export default class Users extends Component<any, any> {
 
     constructor(props: any) {
@@ -13,9 +10,9 @@ export default class Users extends Component<any, any> {
     }
 
     componentDidMount() {
-        Prod.get('/postes')
-            .then(res => {
+        Prod.get('/estoque').then(res => {
                 this.setState({ usersCollection: res.data });
+                console.log(res.data)
             })
             .catch(function (error) {
                 console.log(error);
@@ -31,7 +28,7 @@ export default class Users extends Component<any, any> {
     render() {
         return (
             <>
-            <div className="wrapper-users grid justify-items-center ">
+            <div className="wrapper-users grid justify-items-center mb-20 ">
                 <div className="container grid justify-items-center ">
                     
                     <table aria-label="custom pagination table" className="table table-striped table-dark">
@@ -48,7 +45,7 @@ export default class Users extends Component<any, any> {
                                 <td className="grid justify-items-center bg-medra-100">Produçao</td>
                                 <td></td>
                                 <td></td>
-                                <td className="grid justify-items-center bg-medra-100">Data</td>
+                                <td className="grid justify-items-center bg-medra-100">Finalizado Em</td>
                             </tr>
                         </thead>
                         <tbody >

@@ -9,7 +9,6 @@ import Box from '@mui/material/Box';
 
 
 
-
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
     color: 'green',
@@ -51,14 +50,14 @@ export default class CreateUser extends Component<any, any> {
 
         this.onChangeUserCidade = this.onChangeUserCidade.bind(this);
         this.onChangeUserQuadricula = this.onChangeUserQuadricula.bind(this);
-        this.onChangeUserDate = this.onChangeUserDate.bind(this);
+        this.onChangeUserFinalizada = this.onChangeUserFinalizada.bind(this);
         this.onChangeUserProduçao = this.onChangeUserProduçao.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             Cidade: '',
             Quadricula: '',
-            Date: '',
+            Finalizada: '',
             Produçao: ''
         }
     }
@@ -71,33 +70,31 @@ export default class CreateUser extends Component<any, any> {
       this.setState({ Quadricula: e.target.value })
   }
 
-    onChangeUserDate(e: { target: { value: any; }; }) {
-    this.setState({ Date: e.target.value })
+    onChangeUserFinalizada(e: { target: { value: any; }; }) {
+    this.setState({ Finalizada: e.target.value })
 }
 
     onChangeUserProduçao(e: { target: { value: any; }; }) {
         this.setState({ Produçao: e.target.value })
     }
 
-    onSubmit(e: { preventDefault: () => void; }) {
+    async onSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault()
 
         const userObject = {
-            Cidade: this.state.Cidade,
-            Quadricula: this.state.Quadricula,
-            Date: this.state.Date,
-            Produçao: this.state.Produçao
+          
+            "Cidade": this.state.Cidade,
+            "Quadricula": this.state.Quadricula,
+            "Finalizada": this.state.DataFinalizada,
+            "Produçao": this.state.Produçao,
+            
         };
+ 
 
-        Prod.post('/medral', userObject)
-            .then((res) => {
-                console.log(res.data)
-            }).catch((error) => {
-                console.log(error)
-            });
-
-        this.setState({ Cidade: '', Quadricula: '', Date: '', Produçao: '' })
+       Prod.post('/estoque/cadastro', userObject ).then((res) => { console.log(res.data); alert(`sucess`)}).catch((error) => { console.log(error); alert(`error`)})
+        this.setState({ Cidade: '', Quadricula: '', Finalizada: '', Produçao: '' })
     }
+    
     
 
     render() {
@@ -118,7 +115,7 @@ export default class CreateUser extends Component<any, any> {
       >
           
        
-            <div className="wrapper grid justify-items-center ">
+            <div className="wrapper grid justify-items-center px-1 ">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group px-1">
                         
@@ -129,13 +126,14 @@ export default class CreateUser extends Component<any, any> {
                     </div>
                     <div className="form-group mt-0.5 px-1">
                         
-                        <CssTextField label="Insira a Data" value={this.state.Date} onChange={this.onChangeUserDate} className="form-control px-1 mt-2" />
+                        <CssTextField label="Insira a Data" value={this.state.Finalizada} onChange={this.onChangeUserFinalizada} className="form-control px-1 mt-2" />
                     
                         
                         <ValidationTextField label="Adicione a Produção" type="Number"  value={this.state.Produçao} placeholder="0" onChange={this.onChangeUserProduçao} className="form-control px-1 mt-2" />
                     </div>
-                    <div className="form-group mt-3 grid justify-items-center">
-                    <Button type="submit" className="btn bg-medra-100 btn-block" variant="contained" endIcon={<SendIcon />}> Enviar </Button>
+                    <div className=" form-control px-1 ml-1 mt-2">
+                    <Button type="submit" className="btn bg-medra-100 btn-block" variant="contained" endIcon={<SendIcon />}> Adicionar</Button>
+                    
                     </div>
                 </form>
             </div>

@@ -4,6 +4,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 module.exports = withBundleAnalyzer({
+  async rewrites() {
+    return [
+      {
+        source: '/producao',
+        destination: 'https://localhost:8080/estoque/cadastro',
+      },
+    ]
+  },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
