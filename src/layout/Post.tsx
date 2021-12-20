@@ -85,7 +85,7 @@ export default class CreateUser extends Component<any, any> {
           
             "Cidade": this.state.Cidade,
             "Quadricula": this.state.Quadricula,
-            "Finalizada": this.state.DataFinalizada,
+            "Finalizada": this.state.Finalizada,
             "Produçao": this.state.Produçao,
             
         };
