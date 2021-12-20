@@ -29,7 +29,7 @@ const Heroprodi: NextComponentType = () => {
 
               <button
                 className="border-l-2 mx-1 border-2 px-4 rounded-lg hover:bg-gray-400 transition duration-200"
-                onClick={(): Promise<void> => signOut({ callbackUrl: 'http://localhost:3000/' })}
+                onClick={(): Promise<void> => signOut({ callbackUrl: 'https://producaomilgrau.vercel.app/' })}
               >
                 Sair
               </button>
