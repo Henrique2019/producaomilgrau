@@ -11,7 +11,7 @@ const Hero: NextComponentType = () => {
   const [session, ] = useSession();
 
   return (
-    <Background color="bg-gray-100">
+    <Background color="">
       <Section yPadding="pt-5 pb-3">
       <NavbarTwoColumns logo={<Logo />} >
           {session ? (
