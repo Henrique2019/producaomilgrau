@@ -5,10 +5,10 @@ const Logo = () => {
     
     <div >  
     <Image
-    src="/coleta.png"
+    src="/foto.png"
     alt="Logo Teach Other"
-    width={200}
-    height={100}
+    width={105}
+    height={60}
     
   />
   </div>

@@ -29,10 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/producao": [
+    "/profiles": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/producao.js"
+      "static/chunks/pages/profiles.js"
     ]
   },
   "ampFirstPages": []

@@ -40,7 +40,7 @@ const Hero: NextComponentType = () => {
         <HeroOneButton
           title={
             <>
-              {'Produção Medral Geo\n'}
+              {'Produção Mil Grau\n'}
               <span className="text-medra-100">Cadastro de IP-USO MUTUO</span>
             </>
           }
